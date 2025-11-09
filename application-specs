@@ -1,0 +1,677 @@
+# Ladybug Hostel - Application Specifications
+
+## Overview
+
+A Progressive Web App (PWA) designed to educate and guide users in caring for overwintering ladybugs in cold climates. Mobile-first design optimized for quick reference and task management.
+
+## Target Users
+
+- Homeowners and apartment dwellers in cold climates (USDA zones 3-6)
+- People who find ladybugs indoors during fall/winter
+- Garden enthusiasts wanting to preserve beneficial insects
+- Families interested in educational nature projects
+- Environmental educators
+
+## Core User Flows
+
+### Primary Flow 1: Discovery
+**User finds ladybug(s) indoors → Needs immediate guidance**
+
+1. Land on homepage
+2. Quick identification (photo or visual comparison)
+3. Temperature/location assessment
+4. Care recommendation
+5. Setup instructions or removal guide
+
+### Primary Flow 2: Active Care
+**User committed to overwintering ladybugs**
+
+1. Initial setup guide completion
+2. Set care reminders
+3. Access feeding/maintenance instructions
+4. Monitor progress to spring
+5. Release guide
+
+### Primary Flow 3: Education
+**User wants to learn more**
+
+1. Browse educational content
+2. Understand benefits and lifecycle
+3. View community photos/stories
+4. Share knowledge
+
+## Feature Specifications
+
+### 1. Species Identifier
+
+**Purpose**: Help users distinguish between native ladybugs and Asian lady beetles
+
+**Components:**
+- Photo upload (camera or gallery)
+- Visual comparison guide with key characteristics
+- Interactive diagram highlighting M/W marking
+- Color and size indicators
+- Behavior differences
+- Risk assessment (harmless vs. may bite/stain)
+
+**Technical Requirements:**
+- Camera API access
+- Image display/comparison
+- Offline-capable reference images
+- Responsive image handling
+
+**Output:**
+- Species identification
+- Behavioral expectations
+- Appropriate care modifications
+
+### 2. Care Decision Tree
+
+**Purpose**: Guide users to appropriate care method based on circumstances
+
+**Input Variables:**
+- Current outdoor temperature
+- Indoor temperature
+- Number of ladybugs (1, few, many)
+- Activity level (dormant, sluggish, active)
+- Available resources (space, time, materials)
+- User preference (keep, relocate, remove)
+
+**Decision Points:**
+1. **Temperature Check**
+   - Outdoor < 32°F → Indoor care or cool storage
+   - Outdoor 32-50°F → Cool storage or gentle outdoor relocation
+   - Outdoor > 50°F → Direct outdoor release
+
+2. **Activity Assessment**
+   - Dormant → Cool storage recommended
+   - Active → Active care or cool storage transition
+   - Playing dead → Wait and reassess
+
+3. **Quantity**
+   - 1-5 → Individual care feasible
+   - 6-20 → Group hibernation ideal
+   - 20+ → Relocation may be better
+
+4. **Resource Assessment**
+   - Cool storage available? → Hibernation method
+   - Only warm spaces? → Active care with transition plan
+   - No time/space? → Gentle removal guide
+
+**Outputs:**
+- Recommended care method
+- Detailed setup instructions
+- Supply checklist
+- Expected outcomes
+- Alternative options
+
+**Technical Requirements:**
+- Conditional logic system
+- Step-through form interface
+- Result caching (localStorage)
+- Printable/shareable results
+
+### 3. Setup Guides
+
+**Purpose**: Step-by-step instructions for each care method
+
+#### Hibernation Setup Guide
+
+**Steps:**
+1. Gather supplies
+   - Container with lid
+   - Ventilation tools (drill/punch)
+   - Shredded paper
+   - Spray bottle for moisture
+   - Ladybugs
+
+2. Prepare container
+   - Create ventilation holes (size/quantity guide)
+   - Add bedding layer
+   - Test moisture level
+
+3. Add ladybugs
+   - Gentle collection methods
+   - Transfer techniques
+   - Grouping importance
+
+4. Find location
+   - Temperature requirements
+   - Darkness importance
+   - Safety from disturbance
+
+5. Monitor
+   - Check schedule
+   - What to look for
+   - When to intervene
+
+**Interactive Elements:**
+- Checklist tracking
+- Photo examples at each step
+- Video demonstrations (optional)
+- Troubleshooting tips
+
+#### Active Care Setup Guide
+
+**Similar structure with focus on:**
+- Terrarium preparation
+- Food sourcing
+- Water provision
+- Daily maintenance
+- Transition to hibernation
+
+#### Relocation Guide
+
+**Focus on:**
+- Gentle collection
+- Timing considerations
+- Suitable release sites
+- What to avoid
+
+### 4. Care Schedule & Reminders
+
+**Purpose**: Help users maintain proper care routine
+
+**Hibernation Schedule:**
+- Moisture check: Weekly
+- Visual inspection: Bi-weekly
+- Temperature verification: As needed
+- Spring countdown: Starting 8 weeks before release
+
+**Active Care Schedule:**
+- Food provision: Every 2-3 days
+- Water refresh: Daily
+- Cleaning: Every 3-4 days
+- Health check: Daily
+
+**Reminder System:**
+- Push notifications (if enabled)
+- Email reminders (optional)
+- In-app notifications
+- Customizable frequency
+
+**Technical Requirements:**
+- Local notification API
+- Scheduling system
+- User preferences storage
+- Snooze/reschedule options
+
+### 5. Educational Content
+
+**Sections:**
+
+**Why Ladybugs Matter**
+- Pest control benefits
+- Garden ecosystem role
+- Economic value
+- Environmental indicators
+
+**Life Cycle**
+- Egg stage
+- Larva stage (with photos)
+- Pupa stage
+- Adult stage
+- Timeline and seasonal patterns
+
+**Biology & Behavior**
+- Diapause explained
+- Aggregation behavior
+- Feeding habits
+- Natural predators
+
+**Regional Information**
+- Climate zones
+- Seasonal timing by region
+- Local species information
+- First/last frost dates
+
+**FAQ Section**
+- Common questions
+- Troubleshooting
+- Myth-busting
+- Safety information
+
+**Technical Requirements:**
+- Content management system
+- Search functionality
+- Bookmark/favorite features
+- Share capabilities
+
+### 6. Spring Release Guide
+
+**Purpose**: Ensure proper release timing and method
+
+**Components:**
+
+**Release Readiness Checker**
+- Current date
+- Local weather data
+- Temperature forecast
+- Release recommendation (ready/wait/ideal)
+
+**Countdown Timer**
+- Days until typical release window
+- Based on geolocation
+- Historical climate data
+
+**Release Instructions**
+- Best time of day
+- Weather conditions
+- Location selection
+- Method details
+- Post-release expectations
+
+**Technical Requirements:**
+- Date/time calculations
+- Weather API integration
+- Geolocation
+- Calendar integration (optional)
+
+### 7. Photo Gallery & Community
+
+**Purpose**: Build community, share success, inspire participation
+
+**Features:**
+
+**User Submissions**
+- Upload setup photos
+- Before/after transformations
+- Success stories
+- Text descriptions
+
+**Gallery Categories**
+- Hibernation setups
+- Active care terrariums
+- Release moments
+- Unusual situations
+
+**Moderation**
+- Community guidelines
+- Report system
+- Admin approval (optional)
+
+**Engagement**
+- Like/favorite
+- Comments
+- Tips sharing
+- Question/answer
+
+**Technical Requirements:**
+- Image upload and storage
+- Content moderation tools
+- Social features
+- Image optimization
+
+### 8. Geolocation Features
+
+**Purpose**: Provide region-specific guidance
+
+**Data Points:**
+- USDA hardiness zone
+- Average first/last frost
+- Current weather
+- Seasonal recommendations
+
+**Customization:**
+- Release date estimates
+- Species prevalence
+- Regional tips
+- Local resources
+
+**Technical Requirements:**
+- Geolocation API
+- Weather API integration
+- Climate database
+- Fallback manual entry
+
+### 9. Quick Reference Cards
+
+**Purpose**: Fast access to critical information
+
+**Card Topics:**
+- Emergency: "Found a ladybug now what?"
+- Quick ID: Native vs Asian
+- Temperature guide
+- Food options
+- Signs of health
+- When to release
+
+**Features:**
+- Swipeable cards
+- Searchable
+- Bookmarkable
+- Offline access
+- Printable versions
+
+## Technical Stack Recommendations
+
+### Frontend
+- **Framework**: React or Vue.js
+- **Styling**: Tailwind CSS
+- **PWA**: Workbox for service workers
+- **State Management**: Context API or Vuex
+- **Routing**: React Router or Vue Router
+
+### Backend (Minimal)
+- **Optional**: For community features and weather API proxy
+- **Serverless functions** (Netlify/Vercel Functions)
+- **Database**: Firebase or Supabase (for community content)
+- **Storage**: Cloud storage for user images
+
+### APIs
+- **Weather**: OpenWeatherMap or WeatherAPI
+- **Geolocation**: Browser Geolocation API
+- **Notifications**: Web Notifications API
+- **Camera**: MediaDevices API
+
+### Data Storage
+- **LocalStorage**: User preferences, care schedules, notes
+- **IndexedDB**: Offline content, cached images
+- **Cloud**: Optional sync, community features
+
+## Design Specifications
+
+### Visual Identity
+
+**Color Palette:**
+- Primary: Red/orange (ladybug colors)
+- Secondary: Leaf green
+- Accent: Black
+- Background: Off-white/cream
+- Status: Green (healthy), yellow (caution), red (alert)
+
+**Typography:**
+- Headers: Bold, friendly sans-serif
+- Body: Readable, clean sans-serif
+- Accent: Rounded for friendly feel
+
+**Imagery:**
+- High-quality ladybug photos
+- Illustration style: Educational, friendly
+- Icons: Simple, recognizable
+- Diagrams: Clear, labeled
+
+### UI/UX Principles
+
+**Mobile-First:**
+- Single-column layouts
+- Large touch targets (minimum 44x44px)
+- Thumb-friendly navigation
+- Minimal text entry
+
+**Accessibility:**
+- WCAG 2.1 AA compliance
+- Color contrast ratios
+- Screen reader support
+- Keyboard navigation
+- Alt text for images
+
+**Performance:**
+- Fast load times (< 3 seconds)
+- Optimized images
+- Lazy loading
+- Offline functionality
+- Progressive enhancement
+
+**Navigation:**
+- Bottom nav bar (mobile)
+- Clear hierarchy
+- Back button support
+- Breadcrumbs (when deep)
+
+### Key Screens
+
+**1. Home/Dashboard**
+- Quick action buttons
+- Current care status (if active)
+- Seasonal information
+- Quick links
+
+**2. Decision Tree**
+- Progress indicator
+- Question per screen
+- Clear next/back navigation
+- Skip option where appropriate
+
+**3. Setup Guide**
+- Step counter
+- Progress bar
+- Large images
+- Checkbox completion
+- Next/previous buttons
+
+**4. Care Schedule**
+- Calendar view
+- List view toggle
+- Task status (done/pending)
+- Add note option
+
+**5. Educational Hub**
+- Card layout
+- Search bar
+- Category filters
+- Reading progress
+
+**6. Gallery**
+- Grid layout
+- Lightbox for full view
+- Filter by category
+- Upload button (prominent)
+
+## Data Schema
+
+### User Preferences
+```javascript
+{
+  userId: string,
+  location: {
+    latitude: number,
+    longitude: number,
+    zone: string,
+    manual: boolean
+  },
+  notificationsEnabled: boolean,
+  careMethod: string,
+  setupDate: timestamp,
+  releaseDate: timestamp
+}
+```
+
+### Care Schedule
+```javascript
+{
+  taskId: string,
+  userId: string,
+  taskType: string,
+  frequency: string,
+  lastCompleted: timestamp,
+  nextDue: timestamp,
+  completed: boolean,
+  notes: string
+}
+```
+
+### Community Post
+```javascript
+{
+  postId: string,
+  userId: string,
+  imageUrl: string,
+  caption: string,
+  category: string,
+  likes: number,
+  timestamp: timestamp,
+  approved: boolean
+}
+```
+
+## Development Phases
+
+### Phase 1: MVP (Minimum Viable Product)
+- Species identifier (visual guide only)
+- Care decision tree
+- Basic hibernation setup guide
+- Educational content (core facts)
+- Offline capability
+
+**Timeline**: 2-3 weeks
+
+### Phase 2: Enhanced Features
+- Care schedule & reminders
+- All setup guides
+- Expanded educational content
+- Spring release guide
+- Weather integration
+
+**Timeline**: 3-4 weeks
+
+### Phase 3: Community Features
+- Photo gallery
+- User submissions
+- Comments/engagement
+- Success stories
+
+**Timeline**: 2-3 weeks
+
+### Phase 4: Polish & Optimization
+- Performance optimization
+- Accessibility audit
+- Additional content
+- User feedback implementation
+- Analytics integration
+
+**Timeline**: 2 weeks
+
+## Success Metrics
+
+### User Engagement
+- Daily active users
+- Session duration
+- Return rate
+- Feature usage
+- Setup guide completion
+
+### Educational Impact
+- Content read rate
+- FAQ access
+- Share rate
+- User feedback
+
+### Community
+- Photo submissions
+- Comments/interactions
+- Success stories shared
+
+### Technical
+- Load time
+- Offline usage
+- Error rate
+- Browser compatibility
+
+## Future Enhancements
+
+- Multilingual support
+- Video tutorials
+- AI-powered species identification
+- Integration with garden planning apps
+- Citizen science data collection
+- Push notification for optimal release conditions
+- Social media integration
+- Printable care cards
+- Email course/newsletter
+- Partnership with garden centers
+
+## Accessibility Checklist
+
+- [ ] Semantic HTML
+- [ ] ARIA labels where needed
+- [ ] Keyboard navigation
+- [ ] Focus indicators
+- [ ] Screen reader tested
+- [ ] Color contrast (4.5:1 minimum)
+- [ ] Resizable text
+- [ ] Alternative text for images
+- [ ] Captions for videos
+- [ ] Error messages clear and helpful
+- [ ] Form labels associated
+- [ ] Skip navigation links
+
+## Testing Requirements
+
+### Functional Testing
+- All user flows
+- Form validation
+- Data persistence
+- Offline functionality
+- Cross-browser compatibility
+
+### Device Testing
+- iOS (Safari)
+- Android (Chrome)
+- Desktop (Chrome, Firefox, Safari, Edge)
+- Tablet sizes
+- Various screen sizes
+
+### Accessibility Testing
+- Screen reader (NVDA, JAWS, VoiceOver)
+- Keyboard only navigation
+- Color blindness simulation
+- High contrast mode
+
+### Performance Testing
+- Load time (3G, 4G, WiFi)
+- Bundle size optimization
+- Image optimization
+- Lighthouse audit (>90 scores)
+
+## Security Considerations
+
+- No collection of personal information beyond necessary
+- Secure image upload validation
+- Content moderation for community features
+- HTTPS only
+- Privacy policy
+- GDPR compliance (if applicable)
+- Safe API key handling
+
+## Deployment
+
+**Hosting Options:**
+- Netlify (recommended for PWA)
+- Vercel
+- GitHub Pages (static only)
+- Firebase Hosting
+
+**CI/CD:**
+- Automated testing
+- Build optimization
+- Deploy previews
+- Rollback capability
+
+**Monitoring:**
+- Error tracking (Sentry)
+- Analytics (privacy-focused)
+- Performance monitoring
+- User feedback collection
+
+---
+
+## Getting Started (Development)
+
+1. Clone repository
+2. Install dependencies
+3. Configure environment variables
+4. Run local development server
+5. Review design system
+6. Follow contribution guidelines
+7. Test thoroughly
+8. Submit pull request
+
+## Contributing Guidelines
+
+- Code style guide
+- Commit message format
+- Pull request template
+- Issue reporting format
+- Testing requirements
+- Documentation standards
